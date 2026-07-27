@@ -1,0 +1,81 @@
+=== MAS 7D bimodality axis ===
+N complete: 241  / v rows: 249 
+GMM raw model: VVV BIC -3960  class 72/169 
+GMM perp model: VVI BIC -4673.3  class 109/132 
+
+Weights gmm_perp:
+  Salience    MoodMod  Tolerance   Conflict    Relapse Withdrawal   Problems 
+    -0.254     -0.424     -0.270      0.415      0.385     -0.357      0.485 
+
+Weights gmm_raw:
+  Salience    MoodMod  Tolerance   Conflict    Relapse Withdrawal   Problems 
+     0.355      0.207      0.467      0.400      0.444      0.319      0.392 
+
+Cosine matrix (selected):
+         gmm_perp gmm_raw old_diff  total   pc1
+gmm_perp    1.000   0.109    0.709 -0.008 0.000
+gmm_raw     0.109   1.000    0.198  0.977 0.988
+old_diff    0.709   0.198    1.000  0.143 0.148
+total      -0.008   0.977    0.143  1.000 0.995
+pc1         0.000   0.988    0.148  0.995 1.000
+
+Score cors:
+         gmm_perp gmm_raw old_diff total   pc1
+gmm_perp    1.000   0.067    0.830 0.000 0.008
+gmm_raw     0.067   1.000    0.397 0.996 0.998
+old_diff    0.830   0.397    1.000 0.342 0.350
+total       0.000   0.996    0.342 1.000 0.999
+pc1         0.008   0.998    0.350 0.999 1.000
+
+Projection summaries:
+                      label   n          mean        sd        skew
+dip                   total 241 -1.651514e-16 2.0427141 -0.08485791
+dip1                    pc1 241 -1.787413e-16 2.0511880 -0.07629680
+dip2 old_diff_add_minus_eng 241 -1.031909e-16 0.8649000  0.21702866
+dip3                gmm_raw 241 -2.192806e-16 2.0314332 -0.01764898
+dip4         gmm_perp_total 241  8.522459e-17 1.5978336 -0.22002722
+dip5         pp_max_bc_perp 241 -1.980896e-17 1.2375160  0.76713684
+dip6        pp_min_dip_perp 241 -3.685388e-18 0.8165843 -0.40659034
+          kurtosis bimod_coef         dip dip_p ashman_D  n1  n2
+dip  -0.6023619500  0.4135489 0.019665489 0.772       NA  NA  NA
+dip1 -0.5995194638  0.4125010 0.019004794 0.862       NA  NA  NA
+dip2  0.0005308307  0.3446228 0.016105995 0.976       NA  NA  NA
+dip3 -0.6148188728  0.4128317 0.024901221 0.360 2.551550  72 169
+dip4 -0.1683847386  0.3653661 0.021570057 0.648 2.356873 109 132
+dip5  0.3710662416  0.4659811 0.016070369 0.972       NA  NA  NA
+dip6  0.5516593081  0.3246432 0.009535509 1.000       NA  NA  NA
+
+Bootstrap cos(w, w0): mean 0.986 sd 0.01 q10 0.973 
+Sign agree:
+  Salience    MoodMod  Tolerance   Conflict    Relapse Withdrawal   Problems 
+     0.575      0.570      0.570      0.425      0.430      0.575      0.435 
+
+External cors (scores x ext):
+         HUMS_healthy HUMS_unhealthy MSI.AE MSI.MT trimmedMAS_Addictivecore
+total           0.396          0.564  0.520  0.119                    0.929
+pc1             0.390          0.562  0.521  0.123                    0.932
+old_diff       -0.203          0.291 -0.087 -0.037                    0.623
+gmm_raw         0.368          0.560  0.501  0.117                    0.944
+gmm_perp       -0.358          0.085 -0.326 -0.100                    0.270
+pp_bc           0.225          0.016  0.268  0.095                   -0.114
+pp_dip         -0.084          0.089 -0.046 -0.004                    0.161
+         trimmedMAS_Engagementcore MAS_Addictivecore MAS_Engagementcore     F1
+total                        0.786             0.953              0.911  0.709
+pc1                          0.777             0.955              0.907  0.717
+old_diff                    -0.180             0.607             -0.076  0.796
+gmm_raw                      0.743             0.966              0.884  0.756
+gmm_perp                    -0.428             0.242             -0.363  0.649
+pp_bc                        0.290            -0.096              0.177 -0.517
+pp_dip                      -0.018             0.141             -0.174  0.111
+             F2
+total     0.721
+pc1       0.711
+old_diff -0.254
+gmm_raw   0.665
+gmm_perp -0.636
+pp_bc     0.568
+pp_dip    0.052
+
+Auto-verdict code: Bish_mixed_old_core 
+PP max BC how/value: max_bc 0.466 
+PP min dip how/value: min_dip 0.0095 

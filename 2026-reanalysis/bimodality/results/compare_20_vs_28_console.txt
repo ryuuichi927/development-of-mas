@@ -1,0 +1,32 @@
+=== 20 vs 28 comparison ===
+         version   axis      ash       ch  dip_p        bc  n1  n2 cos_or_note
+1      28item_7d    gmm 2.741151 463.9965 0.6800 0.3583369 111 136   0.7041417
+2      28item_7d    old 2.677968 439.9997 0.9175 0.3519548  NA  NA   0.7041417
+3      28item_7d maxAsh 3.108061 594.4649 0.2250 0.3949331 118 129   0.4263297
+4      20item_7d    gmm 2.762735 454.6081 0.5225 0.3716617  97 149   0.6195604
+5      20item_7d    old 2.701666 451.4732 0.4900 0.3596690  NA  NA   0.6195604
+6      20item_7d maxAsh 3.326207 629.2010 0.6700 0.4378686  87 159   0.5180195
+7 20item_itemlvl    gmm 2.868382 499.2072 0.9350 0.3999124 107 136   0.9513189
+8 20item_itemlvl    old 2.817047 472.0966 0.8975 0.3925549  NA  NA   0.9513189
+9 20item_itemlvl maxAsh 3.784598 877.7991 0.1375 0.5309075 103 140   0.1973806
+  cor_gmm_old
+1   0.8659373
+2   0.8659373
+3   0.3079328
+4   0.8414991
+5   0.8414991
+6   0.6127818
+7          NA
+8          NA
+9   0.2313021
+
+GMM weights 28:
+  Salience    MoodMod  Tolerance   Conflict    Relapse Withdrawal   Problems 
+    -0.258     -0.418     -0.261      0.419      0.395     -0.364      0.476 
+
+GMM weights 20:
+  Salience    MoodMod  Tolerance   Conflict    Relapse Withdrawal   Problems 
+    -0.196     -0.371     -0.247      0.416      0.436     -0.460      0.433 
+
+cos(w_gmm20, w_gmm28) = 0.9904438 
+item20 cos gmm-old = 0.9513189 

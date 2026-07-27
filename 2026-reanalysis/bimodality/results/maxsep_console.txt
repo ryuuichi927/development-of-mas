@@ -1,0 +1,21 @@
+=== Max-separation plane sensitivity ===
+N 241  space X_perp
+
+        direction ashman_D    CH_1d cos_vs_gmm cos_vs_old  n1  n2
+1        gmm_perp 2.756202 455.3315  1.0000000  0.7089786 105 136
+2        old_diff 2.691127 433.5132  0.7089786  1.0000000 104 137
+3   max_ashman_1d 3.245426 419.2493  0.2809489  0.6692899  53 188
+4 max_ch_2d_xaxis 3.026491 547.2391  0.6953366  0.4133708 106 135
+
+Weights max_ash:
+  Salience    MoodMod  Tolerance   Conflict    Relapse Withdrawal   Problems 
+    -0.446     -0.329     -0.594      0.365     -0.064      0.366     -0.264 
+
+Weights max_ch x:
+[1]  0.133 -0.512 -0.142 -0.184  0.286 -0.252  0.722
+
+Dip p gmm: 0.65  max_ash: 0.63 
+cos(max_ash, gmm) 0.2809489  cos(max_ash, old) 0.6692899 
+best 2d CH 547.2328  how refine 
+stats ash plane dip_p 0.5425 
+stats ch plane dip_p 0.07 

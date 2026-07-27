@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-28",
+  "n_complete": 241,
+  "n_v": 249,
+  "gmm_raw_model": "VVV",
+  "gmm_raw_bic": -3959.971928,
+  "gmm_perp_model": "VVI",
+  "gmm_perp_bic": -4673.331785,
+  "cls_raw": {
+    "1": 72,
+    "2": 169
+  },
+  "cls_perp": {
+    "1": 109,
+    "2": 132
+  },
+  "pp_bc_how": "max_bc",
+  "pp_bc_value": 0.465981,
+  "pp_dip_how": "min_dip",
+  "pp_dip_value": 0.009536,
+  "boot_ok": 200,
+  "boot_B": 200,
+  "boot_cos_mean": 0.985888,
+  "boot_cos_sd": 0.010218,
+  "boot_cos_q10": 0.973125,
+  "cos_gmm_perp_vs_old": 0.708979,
+  "cos_gmm_perp_vs_total": -0.007532,
+  "cos_gmm_perp_vs_pc1": -0.00007,
+  "cos_gmm_raw_vs_old": 0.198454,
+  "cos_gmm_raw_vs_total": 0.976869,
+  "cor_gmm_perp_old": 0.829543,
+  "cor_gmm_perp_total": 3.063835e-17,
+  "cor_gmm_raw_total": 0.995969
+}
