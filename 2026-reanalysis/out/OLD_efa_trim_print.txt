@@ -1,0 +1,53 @@
+Factor Analysis using method =  minres
+Call: fa(r = df_normed_t, nfactors = 2, rotate = "varimax", fm = "minres")
+Standardized loadings (pattern matrix) based upon correlation matrix
+      item    MR1    MR2    h2    u2  com
+mas14    9  0.749        0.570 0.430 1.03
+mas25   18  0.744        0.554 0.446 1.00
+mas13    8  0.731        0.545 0.455 1.04
+mas19   13  0.714        0.593 0.407 1.32
+mas18   12  0.700        0.525 0.475 1.14
+mas17   11  0.700        0.492 0.508 1.01
+mas26   19  0.581        0.350 0.650 1.07
+mas28   20  0.575        0.354 0.646 1.14
+mas20   14  0.574        0.404 0.596 1.43
+mas16   10  0.463        0.279 0.721 1.55
+mas24   17         0.709 0.526 0.474 1.09
+mas23   16         0.687 0.542 0.458 1.29
+mas05    3         0.630 0.403 0.597 1.03
+mas08    6         0.620 0.391 0.609 1.04
+mas21   15         0.594 0.439 0.561 1.46
+mas07    5         0.587 0.405 0.595 1.34
+mas09    7  0.315  0.580 0.436 0.564 1.54
+mas06    4         0.574 0.354 0.646 1.15
+mas04    2         0.520 0.350 0.650 1.55
+mas01    1         0.516 0.355 0.645 1.60
+
+                        MR1   MR2
+SS loadings           4.897 3.971
+Proportion Var        0.245 0.199
+Cumulative Var        0.245 0.443
+Proportion Explained  0.552 0.448
+Cumulative Proportion 0.552 1.000
+
+Mean item complexity =  1.2
+Test of the hypothesis that 2 factors are sufficient.
+
+df null model =  190  with the objective function =  8.957 with Chi Square =  2154.077
+df of  the model are 151  and the objective function was  1.274 
+
+The root mean square of the residuals (RMSR) is  0.046 
+The df corrected root mean square of the residuals is  0.052 
+
+The harmonic n.obs is  249 with the empirical chi square  101.391  with prob <  0.999 
+The total n.obs was  249  with Likelihood Chi Square =  304.623  with prob <  1.98e-12 
+
+Tucker Lewis Index of factoring reliability =  0.901
+RMSEA index =  0.0638  and the 90 % confidence intervals are  0.0536 0.0744
+BIC =  -528.512
+Fit based upon off diagonal values = 0.982
+Measures of factor score adequacy             
+                                                    MR1   MR2
+Correlation of (regression) scores with factors   0.944 0.924
+Multiple R square of scores with factors          0.891 0.854
+Minimum correlation of possible factor scores     0.781 0.709

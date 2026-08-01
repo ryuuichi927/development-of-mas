@@ -1,0 +1,334 @@
+Original data: N x Variables:291 82
+===============Reading done!========================
+===============Renaming done!========================Trimmed data: N= 249
+===============Recoding done!========================MUNGE N=249
+=== MAS EFA clean ===
+USE_ROUGHFIX=FALSE N_FACTORS=2 ROTATION=varimax ENGAGEMENT_TRIM_MODE=legacy_2021 COMPOSITE_NA_RM=FALSE
+Listwise complete MAS-28: N=241 / 249
+KMO full28: overall=0.933  item min=0.855 max=0.960
+Parallel analysis suggests that the number of factors =  2  and the number of components =  2 
+fa.parallel full28 → factors=2 components=2 | using N_FACTORS=2
+Full28 FA: TLI=0.894 RMSEA=0.0579
+Factor Analysis using method =  minres
+Call: fa(r = mas_items_efa, nfactors = as.integer(N_FACTORS), rotate = ROTATION, 
+    fm = "minres")
+Standardized loadings (pattern matrix) based upon correlation matrix
+      item   MR1    MR2    h2    u2  com
+mas23   23 0.712        0.567 0.433 1.23
+mas24   24 0.700        0.512 0.488 1.09
+mas05    5 0.627        0.403 0.597 1.05
+mas21   21 0.622        0.455 0.545 1.34
+mas11   11 0.617  0.344 0.498 0.502 1.57
+mas09    9 0.616        0.467 0.533 1.44
+mas08    8 0.598        0.362 0.638 1.03
+mas07    7 0.564        0.371 0.629 1.33
+mas12   12 0.561  0.313 0.413 0.587 1.57
+mas06    6 0.557        0.338 0.662 1.18
+mas03    3 0.549  0.332 0.411 0.589 1.65
+mas02    2 0.545  0.446 0.496 0.504 1.92
+mas22   22 0.544  0.306 0.390 0.610 1.57
+mas01    1 0.535        0.358 0.642 1.47
+mas04    4 0.529        0.349 0.651 1.47
+mas10   10 0.458  0.457 0.419 0.581 2.00
+mas13   13        0.763 0.595 0.405 1.05
+mas14   14        0.750 0.576 0.424 1.05
+mas25   25        0.741 0.550 0.450 1.00
+mas17   17        0.706 0.503 0.497 1.02
+mas19   19 0.314  0.700 0.588 0.412 1.39
+mas18   18        0.682 0.502 0.498 1.16
+mas28   28        0.578 0.371 0.629 1.22
+mas20   20        0.569 0.399 0.601 1.44
+mas26   26        0.567 0.340 0.660 1.11
+mas15   15 0.441  0.501 0.446 0.554 1.97
+mas27   27 0.365  0.473 0.356 0.644 1.88
+mas16   16        0.445 0.261 0.739 1.58
+
+                        MR1   MR2
+SS loadings           6.197 6.100
+Proportion Var        0.221 0.218
+Cumulative Var        0.221 0.439
+Proportion Explained  0.504 0.496
+Cumulative Proportion 0.504 1.000
+
+Mean item complexity =  1.4
+Test of the hypothesis that 2 factors are sufficient.
+
+df null model =  378  with the objective function =  14.363 with Chi Square =  3301.048
+df of  the model are 323  and the objective function was  2.561 
+
+The root mean square of the residuals (RMSR) is  0.047 
+The df corrected root mean square of the residuals is  0.051 
+
+The harmonic n.obs is  241 with the empirical chi square  199.286  with prob <  1 
+The total n.obs was  241  with Likelihood Chi Square =  585.176  with prob <  2.14e-17 
+
+Tucker Lewis Index of factoring reliability =  0.8943
+RMSEA index =  0.0579  and the 90 % confidence intervals are  0.0506 0.0656
+BIC =  -1186.414
+Fit based upon off diagonal values = 0.983
+Measures of factor score adequacy             
+                                                    MR1   MR2
+Correlation of (regression) scores with factors   0.942 0.946
+Multiple R square of scores with factors          0.887 0.895
+Minimum correlation of possible factor scores     0.774 0.789
+Listwise complete trimmed: N=243 / 249
+KMO trimmed: overall=0.910  item min=0.846 max=0.938
+Parallel analysis suggests that the number of factors =  2  and the number of components =  2 
+fa.parallel trimmed → factors=2 components=2
+Trimmed FA: TLI=0.897 RMSEA=0.0653
+Factor Analysis using method =  minres
+Call: fa(r = mas_trim_efa, nfactors = as.integer(N_FACTORS), rotate = ROTATION, 
+    fm = "minres")
+Standardized loadings (pattern matrix) based upon correlation matrix
+      item    MR1    MR2    h2    u2  com
+mas13    8  0.761        0.589 0.411 1.03
+mas14    9  0.746        0.566 0.434 1.03
+mas25   18  0.746        0.556 0.444 1.00
+mas17   11  0.710        0.506 0.494 1.01
+mas19   13  0.710        0.590 0.410 1.33
+mas18   12  0.699        0.523 0.477 1.14
+mas20   14  0.573        0.400 0.600 1.42
+mas26   19  0.572        0.340 0.660 1.08
+mas28   20  0.567        0.345 0.655 1.15
+mas16   10  0.452        0.268 0.732 1.57
+mas24   17         0.711 0.534 0.466 1.11
+mas23   16         0.685 0.541 0.459 1.30
+mas05    3         0.630 0.403 0.597 1.03
+mas08    6         0.619 0.390 0.610 1.04
+mas21   15         0.597 0.437 0.563 1.42
+mas07    5         0.584 0.402 0.598 1.35
+mas09    7  0.309  0.581 0.433 0.567 1.52
+mas06    4         0.578 0.358 0.642 1.14
+mas04    2         0.520 0.349 0.651 1.54
+mas01    1         0.518 0.351 0.649 1.57
+
+                        MR1   MR2
+SS loadings           4.906 3.976
+Proportion Var        0.245 0.199
+Cumulative Var        0.245 0.444
+Proportion Explained  0.552 0.448
+Cumulative Proportion 0.552 1.000
+
+Mean item complexity =  1.2
+Test of the hypothesis that 2 factors are sufficient.
+
+df null model =  190  with the objective function =  9.045 with Chi Square =  2121.069
+df of  the model are 151  and the objective function was  1.321 
+
+The root mean square of the residuals (RMSR) is  0.047 
+The df corrected root mean square of the residuals is  0.052 
+
+The harmonic n.obs is  243 with the empirical chi square  100.824  with prob <  0.999 
+The total n.obs was  243  with Likelihood Chi Square =  308.064  with prob <  8.08e-13 
+
+Tucker Lewis Index of factoring reliability =  0.897
+RMSEA index =  0.0653  and the 90 % confidence intervals are  0.055 0.076
+BIC =  -521.389
+Fit based upon off diagonal values = 0.981
+Measures of factor score adequacy             
+                                                    MR1   MR2
+Correlation of (regression) scores with factors   0.945 0.925
+Multiple R square of scores with factors          0.892 0.855
+Minimum correlation of possible factor scores     0.785 0.710
+Factor labels: col1 → MAS_F_addictive, col2 → MAS_F_engagement
+Engagement trim mode: legacy_2021 (Salience_trim + Mood_FULL)/2
+                          MAS_F_addictive MAS_F_engagement
+MAS_F_addictive                      1.00             0.06
+MAS_F_engagement                     0.06             1.00
+trimmedMAS_Addictivecore             0.86             0.51
+trimmedMAS_Engagementcore            0.27             0.88
+HUMS_healthy                         0.02             0.55
+HUMS_unhealthy                       0.46             0.36
+MSI.AE                               0.15             0.59
+MSI.MT                               0.03             0.13
+                          trimmedMAS_Addictivecore trimmedMAS_Engagementcore
+MAS_F_addictive                               0.86                      0.27
+MAS_F_engagement                              0.51                      0.88
+trimmedMAS_Addictivecore                      1.00                      0.58
+trimmedMAS_Engagementcore                     0.58                      1.00
+HUMS_healthy                                  0.27                      0.50
+HUMS_unhealthy                                0.56                      0.43
+MSI.AE                                        0.40                      0.55
+MSI.MT                                        0.09                      0.16
+                          HUMS_healthy HUMS_unhealthy MSI.AE MSI.MT
+MAS_F_addictive                   0.02           0.46   0.15   0.03
+MAS_F_engagement                  0.55           0.36   0.59   0.13
+trimmedMAS_Addictivecore          0.27           0.56   0.40   0.09
+trimmedMAS_Engagementcore         0.50           0.43   0.55   0.16
+HUMS_healthy                      1.00           0.19   0.42   0.19
+HUMS_unhealthy                    0.19           1.00   0.26   0.03
+MSI.AE                            0.42           0.26   1.00   0.43
+MSI.MT                            0.19           0.03   0.43   1.00
+Engagement core legacy vs consistent: r=0.918  mean|diff|=0.3838
+=== done. Outputs in: ~/Documents/work-folder/Mas R Contents Improve/out ===
+2021 historical factor_analysis.R was not modified.
+                                   measure   n       cor mean_diff max_abs_diff
+1                       full_Addictivecore 243 1.0000000 0.0000000        0.000
+2                      full_Engagementcore 243 1.0000000 0.0000000        0.000
+3                       trim_Addictivecore 243 1.0000000 0.0000000        0.000
+4               trim_Engagement_legacyMode 247 1.0000000 0.0000000        0.000
+5 trim_Engagement_legacy_vs_consistent_def 246 0.9177345 0.1920732        1.375
+=== Sensitivity: USE_ROUGHFIX=TRUE (2021-like imputation) ===
+=== MAS EFA clean ===
+USE_ROUGHFIX=TRUE N_FACTORS=2 ROTATION=varimax ENGAGEMENT_TRIM_MODE=legacy_2021 COMPOSITE_NA_RM=FALSE
+Imputing with randomForest::na.roughfix (LEGACY — not thesis-default)
+KMO full28: overall=0.935  item min=0.861 max=0.962
+Parallel analysis suggests that the number of factors =  2  and the number of components =  2 
+fa.parallel full28 → factors=2 components=2 | using N_FACTORS=2
+Full28 FA: TLI=0.9 RMSEA=0.0561
+Factor Analysis using method =  minres
+Call: fa(r = mas_items_efa, nfactors = as.integer(N_FACTORS), rotate = ROTATION, 
+    fm = "minres")
+Standardized loadings (pattern matrix) based upon correlation matrix
+      item   MR1    MR2    h2    u2  com
+mas23   23 0.713        0.567 0.433 1.23
+mas24   24 0.698        0.504 0.496 1.07
+mas05    5 0.630        0.405 0.595 1.04
+mas21   21 0.619        0.456 0.544 1.37
+mas11   11 0.616  0.350 0.503 0.497 1.59
+mas09    9 0.615  0.301 0.469 0.531 1.45
+mas08    8 0.596        0.359 0.641 1.03
+mas07    7 0.566        0.373 0.627 1.32
+mas12   12 0.561  0.316 0.415 0.585 1.58
+mas06    6 0.555        0.336 0.664 1.18
+mas03    3 0.552  0.338 0.419 0.581 1.66
+mas02    2 0.549  0.429 0.485 0.515 1.89
+mas22   22 0.536  0.308 0.382 0.618 1.59
+mas01    1 0.535        0.363 0.637 1.50
+mas04    4 0.530        0.350 0.650 1.47
+mas10   10 0.461  0.459 0.423 0.577 2.00
+mas14   14        0.753 0.581 0.419 1.05
+mas25   25        0.738 0.545 0.455 1.00
+mas13   13        0.732 0.550 0.450 1.05
+mas19   19 0.314  0.702 0.592 0.408 1.38
+mas17   17        0.693 0.484 0.516 1.02
+mas18   18        0.682 0.504 0.496 1.16
+mas28   28        0.585 0.377 0.623 1.21
+mas26   26        0.574 0.347 0.653 1.11
+mas20   20        0.570 0.405 0.595 1.47
+mas15   15 0.427  0.508 0.440 0.560 1.94
+mas27   27 0.374  0.475 0.366 0.634 1.90
+mas16   16        0.457 0.274 0.726 1.57
+
+                        MR1   MR2
+SS loadings           6.194 6.082
+Proportion Var        0.221 0.217
+Cumulative Var        0.221 0.438
+Proportion Explained  0.505 0.495
+Cumulative Proportion 0.505 1.000
+
+Mean item complexity =  1.4
+Test of the hypothesis that 2 factors are sufficient.
+
+df null model =  378  with the objective function =  14.187 with Chi Square =  3374.063
+df of  the model are 323  and the objective function was  2.44 
+
+The root mean square of the residuals (RMSR) is  0.046 
+The df corrected root mean square of the residuals is  0.05 
+
+The harmonic n.obs is  249 with the empirical chi square  197.428  with prob <  1 
+The total n.obs was  249  with Likelihood Chi Square =  577.102  with prob <  1.32e-16 
+
+Tucker Lewis Index of factoring reliability =  0.9001
+RMSEA index =  0.0561  and the 90 % confidence intervals are  0.0488 0.0637
+BIC =  -1205.035
+Fit based upon off diagonal values = 0.984
+Measures of factor score adequacy             
+                                                    MR1   MR2
+Correlation of (regression) scores with factors   0.941 0.945
+Multiple R square of scores with factors          0.886 0.892
+Minimum correlation of possible factor scores     0.772 0.785
+KMO trimmed: overall=0.912  item min=0.843 max=0.938
+Parallel analysis suggests that the number of factors =  2  and the number of components =  2 
+fa.parallel trimmed → factors=2 components=2
+Trimmed FA: TLI=0.901 RMSEA=0.0638
+Factor Analysis using method =  minres
+Call: fa(r = mas_trim_efa, nfactors = as.integer(N_FACTORS), rotate = ROTATION, 
+    fm = "minres")
+Standardized loadings (pattern matrix) based upon correlation matrix
+      item    MR1    MR2    h2    u2  com
+mas14    9  0.749        0.570 0.430 1.03
+mas25   18  0.744        0.554 0.446 1.00
+mas13    8  0.731        0.545 0.455 1.04
+mas19   13  0.714        0.593 0.407 1.32
+mas18   12  0.700        0.525 0.475 1.14
+mas17   11  0.700        0.492 0.508 1.01
+mas26   19  0.581        0.350 0.650 1.07
+mas28   20  0.575        0.354 0.646 1.14
+mas20   14  0.574        0.404 0.596 1.43
+mas16   10  0.463        0.279 0.721 1.55
+mas24   17         0.709 0.526 0.474 1.09
+mas23   16         0.687 0.542 0.458 1.29
+mas05    3         0.630 0.403 0.597 1.03
+mas08    6         0.620 0.391 0.609 1.04
+mas21   15         0.594 0.439 0.561 1.46
+mas07    5         0.587 0.405 0.595 1.34
+mas09    7  0.315  0.580 0.436 0.564 1.54
+mas06    4         0.574 0.354 0.646 1.15
+mas04    2         0.520 0.350 0.650 1.55
+mas01    1         0.516 0.355 0.645 1.60
+
+                        MR1   MR2
+SS loadings           4.897 3.971
+Proportion Var        0.245 0.199
+Cumulative Var        0.245 0.443
+Proportion Explained  0.552 0.448
+Cumulative Proportion 0.552 1.000
+
+Mean item complexity =  1.2
+Test of the hypothesis that 2 factors are sufficient.
+
+df null model =  190  with the objective function =  8.957 with Chi Square =  2154.077
+df of  the model are 151  and the objective function was  1.274 
+
+The root mean square of the residuals (RMSR) is  0.046 
+The df corrected root mean square of the residuals is  0.052 
+
+The harmonic n.obs is  249 with the empirical chi square  101.391  with prob <  0.999 
+The total n.obs was  249  with Likelihood Chi Square =  304.623  with prob <  1.98e-12 
+
+Tucker Lewis Index of factoring reliability =  0.901
+RMSEA index =  0.0638  and the 90 % confidence intervals are  0.0536 0.0744
+BIC =  -528.512
+Fit based upon off diagonal values = 0.982
+Measures of factor score adequacy             
+                                                    MR1   MR2
+Correlation of (regression) scores with factors   0.944 0.924
+Multiple R square of scores with factors          0.891 0.854
+Minimum correlation of possible factor scores     0.781 0.709
+Factor labels: col1 → MAS_F_addictive, col2 → MAS_F_engagement
+Engagement trim mode: legacy_2021 (Salience_trim + Mood_FULL)/2
+                          MAS_F_addictive MAS_F_engagement
+MAS_F_addictive                      1.00             0.06
+MAS_F_engagement                     0.06             1.00
+trimmedMAS_Addictivecore             0.86             0.51
+trimmedMAS_Engagementcore            0.27             0.88
+HUMS_healthy                         0.02             0.55
+HUMS_unhealthy                       0.46             0.36
+MSI.AE                               0.15             0.59
+MSI.MT                               0.04             0.13
+                          trimmedMAS_Addictivecore trimmedMAS_Engagementcore
+MAS_F_addictive                               0.86                      0.27
+MAS_F_engagement                              0.51                      0.88
+trimmedMAS_Addictivecore                      1.00                      0.58
+trimmedMAS_Engagementcore                     0.58                      1.00
+HUMS_healthy                                  0.27                      0.50
+HUMS_unhealthy                                0.56                      0.43
+MSI.AE                                        0.40                      0.55
+MSI.MT                                        0.09                      0.16
+                          HUMS_healthy HUMS_unhealthy MSI.AE MSI.MT
+MAS_F_addictive                   0.02           0.46   0.15   0.04
+MAS_F_engagement                  0.55           0.36   0.59   0.13
+trimmedMAS_Addictivecore          0.27           0.56   0.40   0.09
+trimmedMAS_Engagementcore         0.50           0.43   0.55   0.16
+HUMS_healthy                      1.00           0.19   0.42   0.19
+HUMS_unhealthy                    0.19           1.00   0.26   0.03
+MSI.AE                            0.42           0.26   1.00   0.43
+MSI.MT                            0.19           0.03   0.43   1.00
+Engagement core legacy vs consistent: r=0.918  mean|diff|=0.3838
+=== done. Outputs in: ~/Documents/work-folder/Mas R Contents Improve/out ===
+2021 historical factor_analysis.R was not modified.
+                            measure   n       cor    mean_diff max_abs_diff
+1  F_addictive_listwise_vs_roughfix 243 0.9979910 0.0016669287   0.17249588
+2 F_engagement_listwise_vs_roughfix 243 0.9997802 0.0002988795   0.06088802
+Compare done → out/compare_*.csv

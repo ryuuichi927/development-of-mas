@@ -1,0 +1,6 @@
+"measure","n","cor","mean_diff","max_abs_diff"
+"full_Addictivecore",243,1,0,0
+"full_Engagementcore",243,1,0,0
+"trim_Addictivecore",243,1,0,0
+"trim_Engagement_legacyMode",247,1,0,0
+"trim_Engagement_legacy_vs_consistent_def",246,0.917734489500286,0.192073170731707,1.375
