@@ -4,7 +4,7 @@ The Music Addiction Scale, from the 2021 master's work at Durham to the 2026
 re-analysis, kept as a dated record rather than a tidied result.
 
 The scale was developed for the thesis *Music and Addiction: The development of
-the Music Addiction Scale (MAS)* (Durham University, 2022,
+Music Addiction Scale (MAS)* (Durham University, 2022,
 [e-theses 14555](https://etheses.durham.ac.uk/id/eprint/14555/)). Twenty-eight
 items adapted from the behavioural addiction template were trimmed to twenty on
 249 respondents, splitting into an addictive core and an engagement core.
@@ -35,6 +35,9 @@ started from.
 
 Requires R with `psych`, `dplyr`, `tidyr`, `ggplot2` and, for some options,
 `GPArotation` and `randomForest`. Developed against R 4.6.1.
+
+Open `development-of-mas.Rproj`, or set the working directory to the repository
+root yourself. Either way:
 
 ```r
 # from the repository root
