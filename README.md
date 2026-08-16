@@ -75,3 +75,9 @@ taken from the files' own modification times, so the timeline is a
 reconstruction from filesystem evidence rather than a record kept as the work
 happened. Everything from before that date has one author date and one
 committer date because both were set from the same source.
+
+Two mechanical redactions were applied throughout, including to the historical
+commits. Absolute paths from the machine the work was done on were shortened,
+and one folder was renamed because it carried a person's nickname. Both appear
+in comments and in console logs, never in anything the analysis depends on.
+Working notes that named a colleague were left out rather than edited.
