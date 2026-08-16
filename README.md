@@ -60,12 +60,26 @@ Part of the 2021 code is not mine. The pipeline is built on
 he wrote the first factor analysis script and the 2022 additions to the
 descriptive statistics directly. `AUTHORSHIP.md` gives the file and line ranges.
 
-## What is not here
+## Future work
 
-No confirmatory factor analysis. The 2026 work re-examines the exploratory
-structure and tests how much the reported result depends on rotation, on the
-missing-data policy and on the composite formulas. Confirming the structure
-needs a new sample, which is proposed work, not done work.
+The 2026 folder re-examines the exploratory structure; it does not confirm it.
+Confirmation is the next step, and it needs a new sample. The twenty items were
+selected on these 249 respondents, so testing them again on the same data would
+recover the selection rather than test it. A confirmatory factor analysis on
+roughly 300 to 350 new responses would establish whether the two-factor solution
+holds outside the sample it came from.
+
+Two questions raised here would follow from that sample. Whether the addictive
+and engagement poles behave differently against external criteria, rather than
+only loading differently within the scale. And whether the withdrawal facet
+belongs where the instrument puts it, since items 21, 23 and 24 sit on the
+engagement side in both the 2021 solution and the 2026 one.
+
+Further out, the scale measures a disposition and says nothing about episodes.
+Whether a high score corresponds to what actually happens during a given hour of
+listening is a question for repeated momentary measurement, not for a
+questionnaire. That is the direction of the doctoral proposal rather than of this
+repository.
 
 ## History
 
