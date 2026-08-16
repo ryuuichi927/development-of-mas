@@ -1,20 +1,30 @@
 # 2026-07 MAS improvement trial — Pack A + B
-# Run from anywhere; paths absolute.
-
-Sys.setenv(R_LIBS_USER = path.expand("~/Library/R/arm64/4.6/library"))
-.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
+#
+# RECORD, not a runnable entry point. This script reads the R workspace that
+# the 2021 pipeline left behind, which holds participant data and is therefore
+# not distributed. Point MAS_WORKSPACE at a local .RData to re-run it.
+# The runnable path is 2026-reanalysis/RUN_ME.R.
 
 suppressPackageStartupMessages({
   library(psych)
   library(GPArotation)
 })
 
-proj <- path.expand("~/Documents/R Project/2021-mas-music-addiction")
-outdir <- path.expand("~/idea-book/ideas/20260720-mas-episode/trials/2026-07-mas-improvement/results")
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+outdir <- file.path(OUT_DIR, "trials")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 
-setwd(proj)
-load(file.path(proj, ".RData"))
+workspace <- Sys.getenv("MAS_WORKSPACE", unset = "")
+if (!nzchar(workspace) || !file.exists(workspace)) {
+  stop(
+    "This trial needs the 2021 workspace, which is not in the repository ",
+    "because it contains participant data.\n",
+    'Set Sys.setenv(MAS_WORKSPACE = "/path/to/.RData") to re-run it.'
+  )
+}
+load(workspace)
 
 # ---- Gate: item sets (Table 5 EFA membership; audit-locked) ----
 items20 <- c(

@@ -1,9 +1,8 @@
 # MAS 7D bimodality axis trial
-# Project: 20260728-mas-shape
 # 2026-07-28
-
-Sys.setenv(R_LIBS_USER = path.expand("~/Library/R/arm64/4.6/library"))
-.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
+#
+# RECORD, not a runnable entry point. Needs the 2021 workspace, which holds
+# participant data and is not distributed. Set MAS_WORKSPACE to re-run.
 
 suppressPackageStartupMessages({
   library(psych)
@@ -12,15 +11,21 @@ suppressPackageStartupMessages({
   library(jsonlite)
 })
 
-proj <- path.expand("~/Documents/R Project/2021-mas-music-addiction")
-root <- path.expand("~/idea-book/ideas/20260728-mas-shape/trials/mas-7d-bimodality-axis")
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+root <- file.path(REANALYSIS, "bimodality")
 outdir <- file.path(root, "results")
 figdir <- file.path(root, "figures")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 dir.create(figdir, recursive = TRUE, showWarnings = FALSE)
 
 set.seed(20260728)
-load(file.path(proj, ".RData"))
+workspace <- Sys.getenv("MAS_WORKSPACE", unset = "")
+if (!nzchar(workspace) || !file.exists(workspace)) {
+  stop('Set Sys.setenv(MAS_WORKSPACE = "/path/to/.RData") to re-run this trial.')
+}
+load(workspace)
 stopifnot(exists("v"))
 
 dims <- c(

@@ -6,15 +6,17 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
-mas <- path.expand("~/Documents/R Project/2021-mas-music-addiction")
-improve <- path.expand("~/Documents/work-folder/Mas R Contents Improve")
-out <- file.path(improve, "out")
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+mas <- THESIS_2021
+improve <- REANALYSIS
+out <- OUT_DIR
 dir.create(out, showWarnings = FALSE, recursive = TRUE)
 
-setwd(mas)
-source("scr/read_data_survey.R")
-source("munge/rename_variables.R")
-source("munge/recode_instruments.R")
+source(file.path(improve, "scr/read_data.R"))
+source(file.path(mas, "munge/rename_variables.R"))
+source(file.path(mas, "munge/recode_instruments.R"))
 v0 <- v
 message("MUNGE N=", nrow(v0), " ncol=", ncol(v0))
 

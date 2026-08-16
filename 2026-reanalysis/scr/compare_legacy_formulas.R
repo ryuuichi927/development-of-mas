@@ -2,9 +2,10 @@
 # Side-by-side: 2021 formula replay vs clean pipeline outputs
 # Requires: run munge first, or call via run script below.
 
-improve_dir <- path.expand(
-  "~/Documents/work-folder/Mas R Contents Improve"
-)
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+improve_dir <- REANALYSIS
 source(file.path(improve_dir, "scr/item_sets.R"))
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 

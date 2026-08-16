@@ -18,9 +18,10 @@ if (identical(get0("ROTATION", ifnotfound = "varimax"), "oblimin") ||
   }
 }
 
-improve_dir <- path.expand(
-  "~/Documents/work-folder/Mas R Contents Improve"
-)
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+improve_dir <- REANALYSIS
 source(file.path(improve_dir, "scr/item_sets.R"))
 
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)

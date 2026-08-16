@@ -1,0 +1,19 @@
+# Session and editor state
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+
+# Participant data never enters this repository, under any name.
+# The synthetic file is the one exception and is committed deliberately.
+data/*.tsv
+data/*.csv
+data/*.xlsx
+data/*.sav
+data/clean/
+!data/synthetic/mas_synthetic.tsv
+
+# out/ is the committed record of the August 2026 run on the real data.
+# Anything produced from the synthetic file is a demonstration, not a result.
+2026-reanalysis/out/synthetic/
+2026-reanalysis/out/trials/

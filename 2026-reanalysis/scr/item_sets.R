@@ -39,10 +39,8 @@ if (!exists("ENGAGEMENT_TRIM_MODE")) ENGAGEMENT_TRIM_MODE <- "legacy_2021"
 # Composites: FALSE matches 2021 (a+b+c+d)/4 → NA if any item NA
 if (!exists("COMPOSITE_NA_RM")) COMPOSITE_NA_RM <- FALSE
 
-IMPROVE_ROOT <- path.expand(
-  "~/Documents/work-folder/Mas R Contents Improve"
-)
-MAS_ROOT <- path.expand(
-  "~/Documents/R Project/2021-mas-music-addiction"
-)
-OUT_DIR <- file.path(IMPROVE_ROOT, "out")
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+IMPROVE_ROOT <- REANALYSIS
+MAS_ROOT <- THESIS_2021

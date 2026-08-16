@@ -8,9 +8,10 @@
 # One-shot: live MAS munge → Improve clean EFA
 # Does not modify files under the MAS project.
 
-improve_dir <- path.expand(
-  "~/Documents/work-folder/Mas R Contents Improve"
-)
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+improve_dir <- REANALYSIS
 
 # Libraries needed by MAS munge / read
 suppressPackageStartupMessages({
@@ -29,14 +30,12 @@ if (!dir.exists(MAS_ROOT)) {
   stop("MAS_ROOT not found: ", MAS_ROOT)
 }
 
-op <- getwd()
-on.exit(setwd(op), add = TRUE)
-setwd(MAS_ROOT)
+message("Reading: ", MAS_DATA)
+source(file.path(improve_dir, "scr/read_data.R"))
 
-message("Working in MAS_ROOT: ", MAS_ROOT)
-source("scr/read_data_survey.R")
-source("munge/rename_variables.R")
-source("munge/recode_instruments.R")
+# The munge chain is the 2021 code, unchanged.
+source(file.path(MAS_ROOT, "munge/rename_variables.R"))
+source(file.path(MAS_ROOT, "munge/recode_instruments.R"))
 message("After munge: N=", nrow(v), " ncol=", ncol(v))
 
 source(file.path(improve_dir, "scr/factor_analysis_clean.R"))

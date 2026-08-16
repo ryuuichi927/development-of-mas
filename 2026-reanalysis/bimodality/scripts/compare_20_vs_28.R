@@ -1,22 +1,32 @@
 # Compare MAS 28-item 7D vs trimmed 20-item (7D dims + item-level 20D)
-Sys.setenv(R_LIBS_USER = path.expand("~/Library/R/arm64/4.6/library"))
-.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
+#
+# RECORD, not a runnable entry point. Needs the 2021 workspace; set
+# MAS_WORKSPACE to re-run. Figure labels use a CJK font when one is available.
 suppressPackageStartupMessages({
   library(mclust)
   library(diptest)
   library(showtext)
   library(sysfonts)
 })
-sysfonts::font_add("cjk", "/System/Library/Fonts/Hiragino Sans GB.ttc")
-showtext::showtext_auto()
-showtext::showtext_opts(dpi = 140)
+cjk_font <- Sys.getenv("MAS_CJK_FONT", unset = "/System/Library/Fonts/Hiragino Sans GB.ttc")
+if (file.exists(cjk_font)) {
+  sysfonts::font_add("cjk", cjk_font)
+  showtext::showtext_auto()
+  showtext::showtext_opts(dpi = 140)
+}
 
-proj <- path.expand("~/Documents/R Project/2021-mas-music-addiction")
-root <- path.expand("~/idea-book/ideas/20260728-mas-shape/trials/mas-7d-bimodality-axis")
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+root <- file.path(REANALYSIS, "bimodality")
 figdir <- file.path(root, "figures")
 outdir <- file.path(root, "results")
 set.seed(20260728)
-load(file.path(proj, ".RData"))
+workspace <- Sys.getenv("MAS_WORKSPACE", unset = "")
+if (!nzchar(workspace) || !file.exists(workspace)) {
+  stop('Set Sys.setenv(MAS_WORKSPACE = "/path/to/.RData") to re-run this trial.')
+}
+load(workspace)
 
 items20 <- c(
   "mas01", "mas04", "mas05", "mas06", "mas07", "mas08", "mas09",

@@ -1,16 +1,13 @@
 # ============================================================
-#  これだけ Source すればいい（本命ランナー）
+#  The one file to source. Runs the 2026 re-analysis.
 # ============================================================
-# RStudio: このファイルを開いて Source / Run
-# または Console に次を1行:
-#   source("~/Documents/work-folder/Mas R Contents Improve/RUN_ME.R")
+# From the repository root:
+#   source("2026-reanalysis/RUN_ME.R")
 #
-# やること: 本番 MAS を読んで munge → 掃除版 EFA
-# やらないこと: 本番 contents.R の上書き
-# 結果: 同じフォルダの out/
+# Reads the data named by MAS_DATA, or the synthetic file if that is unset,
+# runs the 2021 munge chain over it, then the cleaned EFA.
+# Writes to 2026-reanalysis/out/. Nothing under 2021-thesis/ is modified.
 # ============================================================
 
-source(file.path(
-  path.expand("~/Documents/work-folder/Mas R Contents Improve"),
-  "scr", "run_efa_after_mas_munge.R"
-))
+source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+source(file.path(REANALYSIS, "scr", "run_efa_after_mas_munge.R"))

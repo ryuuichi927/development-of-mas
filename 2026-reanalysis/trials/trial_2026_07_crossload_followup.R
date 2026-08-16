@@ -1,12 +1,21 @@
 # Follow-up: cross-loadings pattern vs structure; composite inflation
-Sys.setenv(R_LIBS_USER = path.expand("~/Library/R/arm64/4.6/library"))
-.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
+#
+# RECORD, not a runnable entry point. Needs the 2021 workspace; see
+# trial_2026_07_packAB.R for why it is not in the repository.
 library(psych)
 library(GPArotation)
 
-proj <- path.expand("~/Documents/R Project/2021-mas-music-addiction")
-outdir <- path.expand("~/idea-book/ideas/20260720-mas-episode/trials/2026-07-mas-improvement/results")
-load(file.path(proj, ".RData"))
+if (!exists("MAS_REPO")) {
+  source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
+}
+outdir <- file.path(OUT_DIR, "trials")
+dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
+
+workspace <- Sys.getenv("MAS_WORKSPACE", unset = "")
+if (!nzchar(workspace) || !file.exists(workspace)) {
+  stop('Set Sys.setenv(MAS_WORKSPACE = "/path/to/.RData") to re-run this trial.')
+}
+load(workspace)
 
 items20 <- c(
   "mas01","mas04","mas05","mas06","mas07","mas08","mas09",
