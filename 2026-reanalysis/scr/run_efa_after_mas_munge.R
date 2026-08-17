@@ -1,16 +1,21 @@
 # run_efa_after_mas_munge.R
 #
-# 【これは何？】
-#   Improve「改善キット」の本命ランナー。
-#   現役 MAS を読んで munge → factor_analysis_clean を回す。
-#   本番フォルダの contents.R / factor_analysis.R は書き換えない。
+# The 2026 re-analysis in one pass: read the file named by MAS_DATA, put it
+# through the 2021 munge chain unchanged, then run the cleaned factor analysis.
 #
-# One-shot: live MAS munge → Improve clean EFA
-# Does not modify files under the MAS project.
+# Called by RUN_ME.R, which is the intended entry point.
+#
+# Nothing under 2021-thesis/ is written to. That folder is the record of what
+# was actually run for the thesis and is kept as it was, faults included; the
+# faults are listed with line numbers in 2021-thesis/NOTES.md.
 
 if (!exists("MAS_REPO")) {
   source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
 }
+
+# improve_dir is this folder, 2026-reanalysis. MAS_ROOT is 2021-thesis. The
+# names are the ones the scripts were written with, when the 2026 work lived in
+# a separate kit that read from the 2021 project.
 improve_dir <- REANALYSIS
 
 # Libraries needed by MAS munge / read
