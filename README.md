@@ -1,67 +1,71 @@
 # Development of MAS
 
-The Music Addiction Scale, from the 2021 master's work at Durham to the 2026
-re-analysis, kept as a dated record rather than a tidied result.
+Can music use be measured the way behavioural addictions are measured, and if it
+can, what does the resulting scale actually separate? The Music Addiction Scale
+takes twenty-eight items adapted from the behavioural addiction template and asks
+whether they hold together, on 249 respondents, trimmed to twenty items in an
+addictive core and an engagement core.
 
-The scale was developed for the thesis *Music and Addiction: The development of
-Music Addiction Scale (MAS)* (Durham University, 2022,
-[e-theses 14555](https://etheses.durham.ac.uk/id/eprint/14555/)). Twenty-eight
-items adapted from the behavioural addiction template were trimmed to twenty on
-249 respondents, splitting into an addictive core and an engagement core.
+The scale was developed for the thesis below, and this repository holds the
+analysis code from that work and its re-examination five years later.
 
-This repository exists because the thesis reported a result and not a process.
-The factor structure rests on a single exploratory factor analysis with one
-rotation and one missing-data policy, and none of those choices were tested.
-The 2026 folder is that test.
+> Hamakawa, R. (2022). *Music and Addiction The development of Music Addiction
+> Scale (MAS)*. Master of Arts (Research), Durham University.
+> [e-theses 14555](https://etheses.durham.ac.uk/id/eprint/14555/)
 
-## How to read it
+The thesis reported a result rather than a process. Its factor structure rests on
+a single exploratory factor analysis, with one rotation and one missing-data
+policy, and none of those choices were examined. The 2026 folder examines them.
+Under an oblique rotation the two cores correlate at 0.34, where the 2021
+analysis had assumed them uncorrelated.
 
-The folders are years, in the order the work happened.
+## What is here
 
 | Folder | When | What |
 |---|---|---|
-| `2021-thesis/` | Feb – Nov 2021 | The pipeline as it was run for the thesis. Kept verbatim, including its faults. |
-| `2022-corrections/` | Aug 2022 | Post-submission minor corrections. Supervisor-authored analyses. |
-| `2023-2025-hiatus/` | — | No work. The note says why the gap is here. |
-| `2026-reanalysis/` | Jul – Aug 2026 | Re-examination of the item structure. The runnable part of the repository. |
+| `2021-thesis/` | Feb – Nov 2021 | The pipeline as it was run for the thesis, kept verbatim. |
+| `2022-corrections/` | Aug 2022 | Post-submission corrections: severity grouping over the composites, and one-way ANOVAs against HUMS and Gold-MSI. |
+| `2026-reanalysis/` | Jul – Aug 2026 | The re-examination, and the runnable part of the repository. |
+| `data/` | — | The data policy and a synthetic stand-in. |
+| `tools/` | — | The synthetic data generator. |
 
-`2021-thesis/` is an archive. It is not maintained, it is not corrected, and
-two of its scripts do not run. `2021-thesis/NOTES.md` lists the faults found
-when the code was re-read in 2026, with line numbers. Leaving them visible is
-the point: the 2026 work is only meaningful against an honest record of what it
-started from.
+`2021-thesis/` is an archive. It is not maintained and not corrected, and
+`contents.R` does not run to completion.
 
 ## Running it
 
-Requires R with `psych`, `dplyr`, `tidyr`, `ggplot2` and, for some options,
+Requires R with `psych`, `dplyr`, `tidyr` and `ggplot2`, and for some options
 `GPArotation` and `randomForest`. Developed against R 4.6.1.
 
 Open `development-of-mas.Rproj`, or set the working directory to the repository
 root yourself. Either way:
 
 ```r
-# from the repository root
 source("tools/make_synthetic_data.R")   # writes data/synthetic/mas_synthetic.tsv
 source("2026-reanalysis/RUN_ME.R")      # munge, EFA, composites, fit log
 ```
 
-Output lands in `2026-reanalysis/out/`.
-
 No participant data are distributed here, so the default run uses a synthetic
-file with the same columns and response options and no substantive content.
+file with the same columns and response options and none of the real structure.
 See `data/README.md`. To run against a real export, set `MAS_DATA`.
 
-Two sets of scripts, `2026-reanalysis/trials/` and
-`2026-reanalysis/bimodality/`, need the saved workspace from the 2021 run and
-will stop with an explanation if `MAS_WORKSPACE` is unset. They are included as
-record, not as an entry point.
+`2026-reanalysis/out/` holds the committed record of the run on the real data,
+and `2026-reanalysis/out/README.md` describes each file and how to regenerate
+them. A synthetic run writes to `out/synthetic/` instead, so it cannot overwrite
+that record.
 
-## Authorship
+`2026-reanalysis/trials/` and `2026-reanalysis/bimodality/` need the saved
+workspace from the 2021 run and stop with an explanation if `MAS_WORKSPACE` is
+unset. They are included as record, not as an entry point.
+`2026-reanalysis/bimodality/README.md` reports what that side question found.
 
-Part of the 2021 code is not mine. The pipeline is built on
-[Tuomas Eerola's R_template](https://github.com/tuomaseerola/R_template/), and
-he wrote the first factor analysis script and the 2022 additions to the
-descriptive statistics directly. `AUTHORSHIP.md` gives the file and line ranges.
+## Attribution
+
+The 2021 pipeline is built on
+[R_template](https://github.com/tuomaseerola/R_template/), which supplies the
+`contents.R` entry point and the split into `munge/` and `scr/`. Files derived
+from it carry its header on line 2. `LICENSE` sets out what this repository's
+licence does and does not cover, and `CITATION.cff` holds the citation.
 
 ## Future work
 
@@ -86,15 +90,12 @@ repository.
 
 ## History
 
-This repository was created on 16 August 2026 by importing files that had never
-been under version control. The commits are grouped by year and their dates are
-taken from the files' own modification times, so the timeline is a
-reconstruction from filesystem evidence rather than a record kept as the work
-happened. Everything from before that date has one author date and one
-committer date because both were set from the same source.
+The repository was created on 16 August 2026 from files that had never been under
+version control. Commits are grouped by year and dated from the files' own
+modification times, so the timeline is reconstructed from filesystem evidence
+rather than kept as the work happened. Everything from before that date carries
+the same author and committer date, because both were set from the same source.
 
-Two mechanical redactions were applied throughout, including to the historical
-commits. Absolute paths from the machine the work was done on were shortened,
-and one folder was renamed because it carried a person's nickname. Both appear
-in comments and in console logs, never in anything the analysis depends on.
-Working notes that named a colleague were left out rather than edited.
+Absolute paths from the machine the work was done on were shortened throughout,
+including in the historical commits. They appear in comments and console logs,
+never in anything the analysis depends on.

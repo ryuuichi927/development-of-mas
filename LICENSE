@@ -27,8 +27,8 @@ NOTICE
 This licence covers the parts of this repository written by the copyright
 holder. It does not and cannot cover the parts written by someone else.
 
-Portions of `2021-thesis/` derive from R_template by Tuomas Eerola
-(https://github.com/tuomaseerola/R_template/), and lines 24 to 89 of
-`2022-corrections/descriptive_statistic.R` were written by him. That work
-carries no licence of its own and is included here under attribution, not
-under this one. See AUTHORSHIP.md for the file and line ranges.
+Portions of `2021-thesis/` derive from R_template
+(https://github.com/tuomaseerola/R_template/), and part of
+`2022-corrections/descriptive_statistic.R` has another author, marked as such
+in the file. That work carries no licence of its own and is included here under
+attribution, not under this one.

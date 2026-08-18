@@ -6,8 +6,7 @@
 # Called by RUN_ME.R, which is the intended entry point.
 #
 # Nothing under 2021-thesis/ is written to. That folder is the record of what
-# was actually run for the thesis and is kept as it was, faults included; the
-# faults are listed with line numbers in 2021-thesis/NOTES.md.
+# was actually run for the thesis and is kept as it was.
 
 if (!exists("MAS_REPO")) {
   source(file.path(getwd(), "2026-reanalysis", "scr", "paths.R"))
@@ -40,7 +39,16 @@ source(file.path(improve_dir, "scr/read_data.R"))
 
 # The munge chain is the 2021 code, unchanged.
 source(file.path(MAS_ROOT, "munge/rename_variables.R"))
+
+# The chain drops the raw Gold-MSI columns at the end, so the musical training
+# ones are kept here together with the row key the chain is about to assign
+# (S1, S2, ... over the rows as they stand now, before its quality filters).
+# scr/fix_msi_mt.R needs both.
+gold_mt_raw <- v[, grep("^GOLD[1-7]\\.MT$", names(v)), drop = FALSE]
+gold_mt_raw$PID <- paste0("S", seq_len(nrow(v)))
+
 source(file.path(MAS_ROOT, "munge/recode_instruments.R"))
+source(file.path(improve_dir, "scr/fix_msi_mt.R"))
 message("After munge: N=", nrow(v), " ncol=", ncol(v))
 
 source(file.path(improve_dir, "scr/factor_analysis_clean.R"))

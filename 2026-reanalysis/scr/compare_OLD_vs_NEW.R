@@ -16,7 +16,13 @@ dir.create(out, showWarnings = FALSE, recursive = TRUE)
 
 source(file.path(improve, "scr/read_data.R"))
 source(file.path(mas, "munge/rename_variables.R"))
+
+# Same capture and correction as run_efa_after_mas_munge.R; see scr/fix_msi_mt.R.
+gold_mt_raw <- v[, grep("^GOLD[1-7]\\.MT$", names(v)), drop = FALSE]
+gold_mt_raw$PID <- paste0("S", seq_len(nrow(v)))
+
 source(file.path(mas, "munge/recode_instruments.R"))
+source(file.path(improve, "scr/fix_msi_mt.R"))
 v0 <- v
 message("MUNGE N=", nrow(v0), " ncol=", ncol(v0))
 
